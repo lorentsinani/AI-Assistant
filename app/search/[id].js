@@ -13,6 +13,7 @@ import axios from "axios";
 import { ScreenHeaderBtn, NearbyJobCard } from "../../components";
 import { COLORS, icons, SIZES } from "../../constants";
 import styles from "../../styles/search";
+import 'dotenv/config';
 
 const JobSearch = () => {
   const params = useSearchParams();
@@ -33,7 +34,7 @@ const JobSearch = () => {
         url: `https://jsearch.p.rapidapi.com/search`,
         headers: {
           "X-RapidAPI-Key":
-            "897a2765b5msh4aa2928a49c5329p1bd5b5jsnc2b0eb1f26cc",
+            process.env.RAPID_API_KEY,
           "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
         },
         params: {

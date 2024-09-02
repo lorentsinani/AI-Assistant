@@ -15,13 +15,14 @@ import { FontAwesome } from "@expo/vector-icons"; // Import the icon library you
 import { COLORS, icons, images, SIZES, FONT } from "../constants";
 import { Stack } from "expo-router";
 import { ScreenHeaderBtn } from "../components";
+import 'dotenv/config'
 
 const ChatBot = () => {
   const [data, setData] = useState([]);
   const [textInput, setTextInput] = useState("");
   const componentRef = useRef(null);
 
-  const apiKey = "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";
+  const apiKey = process.env.OPEN_AI_API_KEY
   const apiUrl =
     "https://api.openai.com/v1/chat/completions";
 
